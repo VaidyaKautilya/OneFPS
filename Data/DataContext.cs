@@ -11,5 +11,6 @@ namespace OneFPS.Data
         }
 
         public DbSet<ScheduleReportManager> ScheduleReportManagers { get; set; }
+        public DbSet<ReportFileSetting> ReportFileSettings { get; set; }
     }
 }

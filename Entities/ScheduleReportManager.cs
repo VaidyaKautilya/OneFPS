@@ -15,5 +15,6 @@
         public string FileStoragePath { get; set; }
         public int ReportFrequancyId { get; set; }
         public int ReportFileSettingId { get; set; }
+        public int EmailSettingId { get; set; }
     }
 }
