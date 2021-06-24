@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using OneFPS.Entities;
 
 namespace OneFPS.Data
 {
@@ -8,5 +9,7 @@ namespace OneFPS.Data
         {
 
         }
+
+        public DbSet<ScheduleReportManager> ScheduleReportManagers { get; set; }
     }
 }
