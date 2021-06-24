@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\SHELL\\OneFPS\\OneFPS.csproj": {}
+    "D:\\git\\OneFPS\\OneFPS.csproj": {}
   },
   "projects": {
-    "D:\\SHELL\\OneFPS\\OneFPS.csproj": {
+    "D:\\git\\OneFPS\\OneFPS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\SHELL\\OneFPS\\OneFPS.csproj",
+        "projectUniqueName": "D:\\git\\OneFPS\\OneFPS.csproj",
         "projectName": "OneFPS",
-        "projectPath": "D:\\SHELL\\OneFPS\\OneFPS.csproj",
+        "projectPath": "D:\\git\\OneFPS\\OneFPS.csproj",
         "packagesPath": "C:\\Users\\sunva\\.nuget\\packages\\",
-        "outputPath": "D:\\SHELL\\OneFPS\\obj\\",
+        "outputPath": "D:\\git\\OneFPS\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\sunva\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -41,6 +41,12 @@
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
               "version": "[5.0.7, )"
             },
