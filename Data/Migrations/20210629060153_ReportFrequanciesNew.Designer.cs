@@ -3,53 +3,23 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using OneFPS.Data;
 
 namespace OneFPS.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20210629060153_ReportFrequanciesNew")]
+    partial class ReportFrequanciesNew
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.7")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-            modelBuilder.Entity("OneFPS.Entities.ReportEmailSetting", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Body")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("Has_Attachment_Link")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Recipients")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("ScheduleReportManagerId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Scheduled_Report_ID")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Subject")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ScheduleReportManagerId");
-
-                    b.ToTable("ReportEmailSettings");
-                });
 
             modelBuilder.Entity("OneFPS.Entities.ReportFileSetting", b =>
                 {
@@ -158,36 +128,6 @@ namespace OneFPS.Data.Migrations
                         .IsUnique();
 
                     b.ToTable("ScheduleReportManagers");
-                });
-
-            modelBuilder.Entity("OneFPS.Entities.SchedulerManager", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("Export_ID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Last_Run_Status")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Scheduled_Report_ID")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("SchedulerManagers");
-                });
-
-            modelBuilder.Entity("OneFPS.Entities.ReportEmailSetting", b =>
-                {
-                    b.HasOne("OneFPS.Entities.ScheduleReportManager", "ScheduleReportManager")
-                        .WithMany()
-                        .HasForeignKey("ScheduleReportManagerId");
-
-                    b.Navigation("ScheduleReportManager");
                 });
 
             modelBuilder.Entity("OneFPS.Entities.ScheduleReportManager", b =>
